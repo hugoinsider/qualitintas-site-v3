@@ -1,4 +1,5 @@
 import { Droplets, Phone, MessageSquareText, MapPin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
     return (
@@ -7,15 +8,16 @@ export function Footer() {
                 <div className="grid gap-12 md:grid-cols-4">
                     <div className="col-span-2">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 bg-primary-blue text-white rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/50">
-                                <Droplets className="h-5 w-5" />
+                            <div className="bg-white text-white rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/50 py-2">
+                                {/* <Droplets className="h-5 w-5" /> */}
+                                <Image src="/logo.webp" alt="Logo" width={150} height={250} />
                             </div>
-                            <span className="font-display text-2xl font-bold tracking-tight text-white">
+                            {/* <span className="font-display text-2xl font-bold tracking-tight text-white">
                                 Qualitintas
-                            </span>
+                            </span> */}
                         </div>
                         <p className="max-w-md text-slate-400 leading-relaxed">
-                            Referência em Campinas no fornecimento de tintas imobiliárias, industriais e automotivas. Qualidade técnica e atendimento que você confia.
+                            Referência em Goiânia no fornecimento de tintas imobiliárias, industriais e automotivas. Qualidade técnica e atendimento que você confia.
                         </p>
                     </div>
 
@@ -47,7 +49,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin className="h-4 w-4 text-industrial-orange mt-0.5" />
-                                <span>Av. César Lattes 228<br />Novo Horizonte, Goiânia - GO</span>
+                                <span>Av. César Lattes 228 Qd 100 Lt 11/12<br />Setor Novo Horizonte, Goiânia - GO</span>
                             </li>
                         </ul>
                     </div>

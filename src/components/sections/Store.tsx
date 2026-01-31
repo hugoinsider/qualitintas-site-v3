@@ -94,7 +94,7 @@ function StoreCarousel() {
             <div className="absolute bottom-0 left-0 p-8 w-full z-10 pointer-events-none">
                 <div className="text-white">
                     <p className="font-bold text-lg drop-shadow-md">Visite nosso Showroom</p>
-                    <p className="text-sm text-slate-200 drop-shadow-md">Av. Amoreiras, 1234 - Campinas</p>
+                    <p className="text-sm text-slate-200 drop-shadow-md">Av. César Lattes 228 Qd 100 Lt 11/12 - Goiânia/GO</p>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@ export function Store() {
                         </div>
 
                         <h2 className="font-display text-4xl font-bold tracking-tight mb-6 text-slate-900">
-                            Sua loja de tintas <br />em Campinas
+                            Sua loja de tintas <br />em Goiânia
                         </h2>
                         <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                             Ambiente amplo com showroom completo, estacionamento privativo e equipe técnica altamente treinada para auxiliar em especificações complexas.
