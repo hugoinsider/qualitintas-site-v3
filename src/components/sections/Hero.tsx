@@ -9,20 +9,30 @@ const container = "mx-auto w-full max-w-7xl px-4 sm:px-6";
 export function Hero() {
     return (
         <section id="top" className="relative bg-slate-50 overflow-hidden py-16 lg:py-24">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src="/store/store-4.webp"
+                    alt="Interior da Loja Qualitintas"
+                    className="w-full h-full object-cover opacity-60 grayscale"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent/50" />
+            </div>
+
             {/* Background Accent */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-100 skew-x-12 translate-x-32 hidden lg:block" />
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-100 skew-x-12 translate-x-32 hidden lg:block z-0" />
 
             <div className={`${container} relative z-10 grid gap-12 lg:grid-cols-12 items-center`}>
                 <div className="lg:col-span-7 flex flex-col justify-center">
-                    <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-xs font-semibold text-primary-blue w-fit mb-6 border border-blue-100">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-xs font-bold text-primary-blue w-fit mb-6 border border-blue-100 uppercase tracking-wide">
                         <Sparkles className="h-4 w-4" />
-                        <span>Transforme seus ambientes com qualidade</span>
+                        <span>Bem-vindo(a) a Qualitintas!</span>
                     </div>
 
                     <h1 className="text-balance font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl leading-tight">
-                        Qualidade e cor <br />
-                        <span className="text-primary-blue">incomparáveis</span> <br />
-                        para sua obra
+                        TEMOS OS MELHORES<br />
+                        <span className="text-primary-blue">PRODUTOS PELO</span> <br />
+                        MELHOR PREÇO!
                     </h1>
 
                     <p className="mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">

@@ -1,4 +1,4 @@
-import { Droplets, Phone, MessageSquareText, MapPin } from "lucide-react";
+import { Droplets, Phone, MessageSquareText, MapPin, Mail } from "lucide-react";
 
 export function Footer() {
     return (
@@ -41,6 +41,9 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <MessageSquareText className="h-4 w-4 text-industrial-orange" /> WhatsApp Comercial
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <Mail className="h-4 w-4 text-industrial-orange" /> <a href="mailto:vendas@qualitintas.ind.br" className="hover:text-primary-blue transition-colors">vendas@qualitintas.ind.br</a>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin className="h-4 w-4 text-industrial-orange mt-0.5" />
