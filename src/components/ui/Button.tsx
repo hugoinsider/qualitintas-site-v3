@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: "primary" | "secondary" | "outline" | "ghost" | "danger";
-    size?: "sm" | "md" | "lg";
+    size?: "sm" | "md" | "lg" | "icon";
     asChild?: boolean;
 }
 
@@ -23,6 +23,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                     size === "sm" && "h-9 px-4 text-xs",
                     size === "md" && "h-11 px-6 text-sm",
                     size === "lg" && "h-14 px-8 text-base",
+                    size === "icon" && "h-9 w-9",
 
                     // Variants - Professional/Clean
                     variant === "primary" && [

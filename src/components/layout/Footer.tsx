@@ -57,7 +57,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="h-px w-full bg-slate-800 my-12" />
+                <div className="h-px w-full bg-slate-800/50 my-12" />
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium text-slate-500">
                     <p>© {new Date().getFullYear()} Qualitintas. Todos os direitos reservados.</p>
@@ -75,6 +75,27 @@ export function Footer() {
                             <img src="https://img.icons8.com/color/48/pix.png" alt="Pix" className="h-6" />
                         </div>
                     </div>
+                </div>
+
+                {/* Developer Section */}
+                <div className="mt-16 pt-8 border-t border-slate-800/50 flex flex-col items-center justify-center gap-4 opacity-60 hover:opacity-100 transition-opacity">
+                    <span className="text-xs font-medium tracking-widest uppercase text-slate-500">
+                        Site Desenvolvido por
+                    </span>
+                    <a
+                        href="https://hoffby.com.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-transform hover:scale-105"
+                    >
+                        <Image
+                            src="/logo-hoffby.png"
+                            alt="Hoffby - Agência de Marketing e Tecnologia"
+                            width={120}
+                            height={40}
+                            className="h-8 w-auto object-contain brightness-0 invert"
+                        />
+                    </a>
                 </div>
             </div>
         </footer>
