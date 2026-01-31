@@ -1,14 +1,33 @@
+"use client";
+
+import { useState } from "react";
 import { ArrowRight, Sparkles, Truck, Layers, BadgeDollarSign, UserCheck } from "lucide-react";
+import { sendBudgetEmail } from "@/app/actions/send-budget";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { FeedbackAlert } from "@/components/ui/FeedbackAlert";
 
 const container = "mx-auto w-full max-w-7xl px-4 sm:px-6";
 
 export function Hero() {
+    const [feedback, setFeedback] = useState<{
+        type: "loading" | "success" | "error" | null;
+        message?: string;
+        isVisible: boolean;
+    }>({ type: null, isVisible: false });
+
     return (
         <section id="top" className="relative bg-slate-50 overflow-hidden py-16 lg:py-24">
+            {/* Global Feedback Alert */}
+            <FeedbackAlert
+                type={feedback.type}
+                message={feedback.message}
+                isVisible={feedback.isVisible}
+                onClose={() => setFeedback(prev => ({ ...prev, isVisible: false }))}
+            />
+
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -97,28 +116,62 @@ export function Hero() {
                             </p>
                         </div>
 
-                        <div className="space-y-4">
+                        <form action={async (formData) => {
+                            setFeedback({ type: "loading", isVisible: true });
+
+                            const result = await sendBudgetEmail(formData);
+
+                            if (result.success) {
+                                setFeedback({
+                                    type: "success",
+                                    message: "Solicitação recebida com sucesso! Em breve entraremos em contato.",
+                                    isVisible: true
+                                });
+                                // Reset form manually if needed or let user do it
+                            } else {
+                                setFeedback({
+                                    type: "error",
+                                    message: result.error || "Erro ao enviar solicitação.",
+                                    isVisible: true
+                                });
+                            }
+                        }} className="space-y-4">
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">Nome Completo</label>
-                                <Input placeholder="Digite seu nome" />
+                                <Input name="name" required placeholder="Digite seu nome" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">WhatsApp</label>
-                                <Input placeholder="(00) 00000-0000" />
+                                <Input name="whatsapp" required placeholder="(00) 00000-0000" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">Produtos</label>
-                                <Textarea placeholder="Descreva o que você precisa..." className="min-h-[100px]" />
+                                <Textarea name="message" required placeholder="Descreva o que você precisa..." className="min-h-[100px]" />
                             </div>
 
-                            <Button size="lg" variant="secondary" className="w-full h-12 text-base font-bold shadow-md shadow-orange-500/20">
-                                Solicitar Cotação
-                            </Button>
+                            <div className="flex items-start gap-2">
+                                <input
+                                    type="checkbox"
+                                    name="lgpd"
+                                    required
+                                    id="lgpd-check"
+                                    className="mt-1 h-4 w-4 rounded border-slate-300 text-primary-blue focus:ring-primary-blue"
+                                />
+                                <label htmlFor="lgpd-check" className="text-xs text-slate-500 text-left cursor-pointer">
+                                    Concordo com a <a href="/privacidade" target="_blank" className="underline hover:text-primary-blue">Política de Privacidade</a> e autorizo o contato.
+                                </label>
+                            </div>
 
-                            <p className="text-xs text-center text-slate-400 mt-4">
-                                Respondemos em média em 15 minutos.
-                            </p>
-                        </div>
+                            <Button
+                                type="submit"
+                                disabled={feedback.type === "loading"}
+                                size="lg"
+                                variant="secondary"
+                                className="w-full h-12 text-base font-bold shadow-md shadow-orange-500/20 disabled:opacity-70 disabled:cursor-not-allowed"
+                            >
+                                {feedback.type === "loading" ? "Enviando..." : "Solicitar Cotação"}
+                            </Button>
+                        </form>
                     </Card>
                 </div>
             </div>

@@ -30,6 +30,8 @@ export function Footer() {
                             <li><a href="#produtos" className="hover:text-primary-blue transition-colors">Produtos</a></li>
                             <li><a href="#loja" className="hover:text-primary-blue transition-colors">A Loja</a></li>
                             <li><a href="#mapa" className="hover:text-primary-blue transition-colors">Localização</a></li>
+                            <li><a href="/termos" className="hover:text-primary-blue transition-colors">Termos de Uso</a></li>
+                            <li><a href="/privacidade" className="hover:text-primary-blue transition-colors">Política de Privacidade</a></li>
                         </ul>
                     </div>
 
