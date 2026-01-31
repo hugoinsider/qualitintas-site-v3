@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
-import { MessageSquareText, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 const container = "mx-auto w-full max-w-7xl px-4 sm:px-6";
 
@@ -20,9 +21,15 @@ export function Contact() {
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
 
-                    <Button size="lg" className="h-16 px-10 text-lg font-bold bg-white text-primary-blue hover:bg-blue-50 hover:shadow-lg transition-all border-none">
-                        Falar no WhatsApp
-                        <MessageSquareText className="ml-3 h-6 w-6" />
+                    <Button size="lg" className="h-16 px-10 text-lg font-bold bg-white text-primary-blue hover:bg-blue-50 hover:shadow-lg transition-all border-none" asChild>
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=5562983240125&text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site%21+Pode+me+ajudar&type=phone_number&app_absent=0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Falar no WhatsApp
+                            <WhatsAppIcon className="ml-3 h-6 w-6" />
+                        </a>
                     </Button>
 
                     <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold text-white border-white/30 hover:bg-white/10 hover:text-white hover:border-white">
@@ -31,6 +38,6 @@ export function Contact() {
                     </Button>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

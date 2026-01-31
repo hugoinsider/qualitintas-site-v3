@@ -4,19 +4,19 @@ const container = "mx-auto w-full max-w-7xl px-4 sm:px-6";
 
 export function Location() {
     return (
-        <section id="mapa" className="bg-white py-24">
+        <section id="mapa" className="bg-white dark:bg-slate-900 py-24 transition-colors">
             <div className={container}>
                 <div className="text-center mb-12">
-                    <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900">
+                    <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
                         Localização Estratégica
                     </h2>
-                    <p className="mt-4 text-lg text-slate-600">
+                    <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
                         Fácil acesso e estacionamento próprio para sua comodidade.
                     </p>
                 </div>
 
-                <Card className="p-2 bg-white border border-slate-200 shadow-xl shadow-slate-200/50 rounded-xl overflow-hidden">
-                    <div className="aspect-[21/9] w-full bg-slate-100 relative rounded-lg overflow-hidden">
+                <Card className="p-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-black/50 rounded-xl overflow-hidden">
+                    <div className="aspect-[21/9] w-full bg-slate-100 dark:bg-slate-900 relative rounded-lg overflow-hidden">
                         <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium text-sm">
                             Carregando mapa...
                         </div>

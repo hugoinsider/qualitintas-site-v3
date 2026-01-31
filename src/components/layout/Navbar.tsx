@@ -65,6 +65,7 @@ function TopBar() {
 
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { FontSizeToggle } from "@/components/ui/FontSizeToggle";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 // ... existing imports
 
@@ -110,10 +111,10 @@ export function Navbar() {
                             variant="secondary"
                             size="sm"
                             className="font-bold shadow-md"
-                            onClick={() => window.location.href = "#contato"}
+                            onClick={() => window.open("https://api.whatsapp.com/send/?phone=5562983240125&text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site%21+Pode+me+ajudar&type=phone_number&app_absent=0", "_blank")}
                         >
                             Orçamento WhatsApp
-                            <MessageSquareText className="ml-2 h-4 w-4" />
+                            <WhatsAppIcon className="ml-2 h-4 w-4" />
                         </Button>
                     </div>
 
@@ -147,8 +148,8 @@ export function Navbar() {
                                 <div className="flex justify-center">
                                     <FontSizeToggle />
                                 </div>
-                                <Button className="w-full" variant="secondary" onClick={() => setIsOpen(false)}>
-                                    WhatsApp
+                                <Button className="w-full" variant="secondary" onClick={() => window.open("https://api.whatsapp.com/send/?phone=5562983240125&text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site%21+Pode+me+ajudar&type=phone_number&app_absent=0", "_blank")}>
+                                    WhatsApp <WhatsAppIcon className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>
                         </nav>

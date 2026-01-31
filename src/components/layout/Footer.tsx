@@ -1,5 +1,6 @@
-import { Droplets, Phone, MessageSquareText, MapPin, Mail } from "lucide-react";
+import { Droplets, Phone, MapPin, Mail } from "lucide-react";
 import Image from "next/image";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export function Footer() {
     return (
@@ -44,7 +45,7 @@ export function Footer() {
                                 <Phone className="h-4 w-4 text-industrial-orange" /> (19) 3213-4455
                             </li>
                             <li className="flex items-center gap-3">
-                                <MessageSquareText className="h-4 w-4 text-industrial-orange" /> WhatsApp Comercial
+                                <WhatsAppIcon className="h-4 w-4 text-industrial-orange" /> WhatsApp Comercial
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="h-4 w-4 text-industrial-orange" /> <a href="mailto:vendas@qualitintas.ind.br" className="hover:text-primary-blue transition-colors">vendas@qualitintas.ind.br</a>

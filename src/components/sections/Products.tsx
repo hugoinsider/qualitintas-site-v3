@@ -44,13 +44,13 @@ export function Products() {
     ];
 
     return (
-        <section id="produtos" className="bg-white py-20 text-slate-900">
+        <section id="produtos" className="bg-white dark:bg-slate-900 py-20 text-slate-900 dark:text-white transition-colors">
             <div className={container}>
                 <div className="text-center mb-16">
-                    <h2 className="font-display text-4xl font-bold tracking-tight mb-4 text-slate-900">
+                    <h2 className="font-display text-4xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">
                         Nossos Produtos
                     </h2>
-                    <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+                    <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400">
                         Trabalhamos com as marcas referência no mercado para garantir o melhor resultado e durabilidade.
                     </p>
                 </div>
@@ -58,25 +58,25 @@ export function Products() {
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {products.map((p) => (
                         <div key={p.id}>
-                            <Card className="h-full p-0 overflow-hidden border-slate-200 hover:border-primary-blue/50 hover:shadow-lg transition-all group">
-                                <div className="aspect-[4/3] relative overflow-hidden bg-slate-100">
+                            <Card className="h-full p-0 overflow-hidden border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:border-primary-blue/50 dark:hover:border-primary-blue/50 hover:shadow-lg transition-all group">
+                                <div className="aspect-[4/3] relative overflow-hidden bg-slate-100 dark:bg-slate-900">
                                     <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10" />
                                     <img
                                         src={p.image}
                                         alt={p.title}
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur rounded-lg p-3 text-primary-blue shadow-sm z-20">
+                                    <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur rounded-lg p-3 text-primary-blue shadow-sm z-20">
                                         {p.icon}
                                     </div>
                                 </div>
 
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold mb-3 text-slate-900">{p.title}</h3>
-                                    <p className="text-sm text-slate-600 mb-6 leading-relaxed min-h-[60px]">
+                                    <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{p.title}</h3>
+                                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed min-h-[60px]">
                                         {p.desc}
                                     </p>
-                                    <Button variant="ghost" className="w-full justify-between items-center text-primary-blue hover:text-primary-blue hover:bg-blue-50 px-0 hover:px-4">
+                                    <Button variant="ghost" className="w-full justify-between items-center text-primary-blue hover:text-primary-blue hover:bg-blue-50 dark:hover:bg-blue-900/20 px-0 hover:px-4">
                                         Ver Catálogo <ChevronRight className="h-4 w-4" />
                                     </Button>
                                 </div>

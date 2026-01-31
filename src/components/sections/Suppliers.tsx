@@ -18,16 +18,16 @@ export function Suppliers() {
     ]);
 
     return (
-        <section className="bg-white py-16 border-y border-slate-100">
+        <section className="bg-white dark:bg-slate-900 py-16 border-y border-slate-100 dark:border-slate-800 transition-colors">
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
-                <h3 className="text-center font-display text-2xl font-bold text-slate-900 mb-10 uppercase tracking-wide">
+                <h3 className="text-center font-display text-2xl font-bold text-slate-900 dark:text-white mb-10 uppercase tracking-wide">
                     Principais Fornecedores
                 </h3>
 
                 <div className="overflow-hidden" ref={emblaRef}>
                     <div className="flex gap-12 items-center select-none cursor-grab active:cursor-grabbing">
                         {SUPPLIERS.map((src, i) => (
-                            <div key={i} className="flex-[0_0_150px] min-w-0 h-32 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-80 hover:opacity-100">
+                            <div key={i} className="flex-[0_0_150px] min-w-0 h-32 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-80 hover:opacity-100 filter dark:brightness-200 dark:grayscale dark:hover:grayscale-0 dark:hover:brightness-100">
                                 <img
                                     src={src}
                                     alt={`Fornecedor ${i + 1}`}

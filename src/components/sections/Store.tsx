@@ -103,7 +103,7 @@ function StoreCarousel() {
 
 export function Store() {
     return (
-        <section id="loja" className="bg-slate-50 py-24 border-y border-slate-200">
+        <section id="loja" className="bg-slate-50 dark:bg-slate-950 py-24 border-y border-slate-200 dark:border-slate-800 transition-colors">
             <div className={container}>
                 <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
 
@@ -113,14 +113,14 @@ export function Store() {
                     </div>
 
                     <div className="order-1 lg:order-2">
-                        <div className="inline-block px-3 py-1 bg-blue-100 text-primary-blue text-xs font-bold rounded-full mb-6 uppercase tracking-wider">
+                        <div className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-primary-blue text-xs font-bold rounded-full mb-6 uppercase tracking-wider">
                             Infraestrutura Completa
                         </div>
 
-                        <h2 className="font-display text-4xl font-bold tracking-tight mb-6 text-slate-900">
+                        <h2 className="font-display text-4xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
                             Sua loja de tintas <br />em Goiânia
                         </h2>
-                        <p className="text-lg text-slate-600 mb-10 leading-relaxed">
+                        <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
                             Ambiente amplo com showroom completo, estacionamento privativo e equipe técnica altamente treinada para auxiliar em especificações complexas.
                         </p>
 
@@ -131,12 +131,12 @@ export function Store() {
                                 { title: "Distribuidor Premium", desc: "Suvinil, Coral, Sherwin-Williams e mais.", icon: <BadgeCheck className="h-6 w-6" /> },
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4 group">
-                                    <div className="shrink-0 w-12 h-12 bg-white border border-slate-200 rounded-lg flex items-center justify-center text-industrial-orange shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
+                                    <div className="shrink-0 w-12 h-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-center text-industrial-orange shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
                                         {item.icon}
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-slate-900 text-lg">{item.title}</h4>
-                                        <p className="text-sm text-slate-600">{item.desc}</p>
+                                        <h4 className="font-bold text-slate-900 dark:text-white text-lg">{item.title}</h4>
+                                        <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
